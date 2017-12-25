@@ -9,6 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Consumer {
 
     public static void main(String[] args) {
+
         //Prevent to get IPV6 address,this way only work in debug mode
         //But you can pass use -Djava.net.preferIPv4Stack=true,then it work well whether in debug mode or not
         System.setProperty("java.net.preferIPv4Stack", "true");
@@ -18,7 +19,7 @@ public class Consumer {
 
         while (true) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 String hello = demoService.sayHello("world"); // call remote method
                 System.out.println(hello); // get result
 
